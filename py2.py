@@ -1,6 +1,6 @@
 
 while True:
-    user_action = input("Type add, edit, show, complete or exit:")
+    user_action = input("Type add, edit, show, complete or exit: ")
     user_action = user_action.strip()
     match user_action:
         case 'add':
