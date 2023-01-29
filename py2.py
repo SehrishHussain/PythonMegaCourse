@@ -2,6 +2,7 @@
 while True:
     user_action = input("Type add, edit, show, complete or exit: ")
     user_action = user_action.strip()
+
     match user_action:
         case 'add':
             todo = input('Enter a todo: ') + "\n"
@@ -18,11 +19,19 @@ while True:
 
         case 'show':
             file = open('todos.txt', 'r')
-            todos = file.readlines()  #returns a list
+            todos = file.readlines()  # returns a list
             file.close()
 
+            # new_todos = []
+            # for item in todos:
+            #     new_item = item.strip('\n')
+            #     new_todos.append(new_item)
+            # new_todos = [item.strip('\n') for item in todos]
+            # print(todos)
+
             for index, item in enumerate(todos):
-                row = f"{index - 1}-{item}"
+                item = item.strip('\n')
+                row = f"{index + 1}-{item}"
                 print(row)
         case 'edit':
             number = int(input("Number of the todo to edit: "))
